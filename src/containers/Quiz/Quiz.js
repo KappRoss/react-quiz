@@ -13,7 +13,8 @@ class Quiz extends Component {
           {text: 'answer 1'},
           {text: 'answer 2'},
           {text: 'answer 3'},
-          {text: 'answer 4'}
+          {text: 'answer 4'},
+          {text: 'answer 4'},
         ]
       }
     }
