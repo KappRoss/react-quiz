@@ -17,17 +17,17 @@
 .Button:active{
   box-shadow: inset 2px 2px 1px rgba(0,0,0, 0.3);
 }
-.Button.disabled{
-  background-color: grey;
-  color: black;
-  cursor: not-allowed;
-}
 .error{
   background-color: rgb(243, 62, 62);
 }
-.succes{
+.success{
   background-color: rgb(76, 219, 76);
 }
 .primary{
   background-color: #588aec
+}
+.Button.disabled{
+  background-color: grey;
+  color: black;
+  cursor: not-allowed;
 }

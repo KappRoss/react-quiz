@@ -4,31 +4,6 @@ import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz';
 import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz';
 
 class Quiz extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.launchClock()
-  //   this.state = {
-  //     currentTime: new Date().toLocaleString(),
-  //     activeQuestion: 0 ,
-  //     quiz: {
-  //       question: 'What color is the sky?',
-  //       rightAnswerId: 2,
-  //       answers: [
-  //         {text: 'red', id: 1},
-  //         {text: 'blue', id: 2},
-  //         {text: 'green', id: 3},
-  //         {text: 'white', id: 4}
-  //       ]
-  //     }
-  //   }
-  // }
-  // launchClock(){
-  //   setInterval(() => {
-  //     this.setState({
-  //       currentTime: new Date().toLocaleString()
-  //     })
-  //   }, 1000)
-  // }
 
   state = {
     results: {},
