@@ -3,6 +3,7 @@ import s from './Auth.module.css'
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
 import is from 'is_js'
+import axios from "axios";
 
 const Auth = props => {
 
@@ -55,7 +56,7 @@ const Auth = props => {
             isValid = value.length >= validation.minLength && isValid
         }
 
-        return  isValid
+        return isValid
     }
 
     const onChangeHandler = (event, controlName) => {
@@ -81,12 +82,34 @@ const Auth = props => {
 
     }
 
-    const loginHandler = () => {
+    const loginHandler = async () => {
+        const authData = {
+            email: state.formControls.email.value,
+            password: state.formControls.password.value,
+            returnSecureToken: true
+        }
 
+        try {
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCwGjqYaUgSL_RUFE-MBF9_mttu-_grZfc', authData)
+            console.log(response)
+        } catch (e) {
+            console.log(e)
+        }
     }
 
-    const registerHandler = () => {
+    const registerHandler = async () => {
+        const authData = {
+            email: state.formControls.email.value,
+            password: state.formControls.password.value,
+            returnSecureToken: true
+        }
 
+        try {
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCwGjqYaUgSL_RUFE-MBF9_mttu-_grZfc', authData)
+            console.log(response)
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     const submitHandler = event => {
@@ -94,7 +117,7 @@ const Auth = props => {
     }
 
     const renderInputs = () => {
-        return  Object.keys(state.formControls).map((controlName, index) => {
+        return Object.keys(state.formControls).map((controlName, index) => {
             const control = state.formControls[controlName]
             return (
                 <Input
@@ -122,7 +145,7 @@ const Auth = props => {
                     className={s.AuthForm}
                 >
                     {
-                      renderInputs()
+                        renderInputs()
                     }
                     <Button
                         type="success"
